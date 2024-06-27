@@ -2,12 +2,27 @@
   "name": "my-vue-app",
   "version": "0.1.0",
   "private": true,
+  "main": "electron/main.js",
+  "description": "My Vue.js and Electron application",
+  "author": "Isaa",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "electron:serve": "npm run build && electron .",
+    "electron:build": "npm run build && electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "files": [
+      "dist/**/*",
+      "electron/main.js" 
+    ],
+    "extends": null
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
@@ -17,6 +32,8 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "electron": "^31.1.0",
+    "electron-builder": "^24.13.3",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
   },
