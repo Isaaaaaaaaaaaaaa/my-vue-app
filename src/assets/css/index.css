@@ -1,0 +1,252 @@
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.slide.active-slide {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0%);
+}
+
+.slide.previous-slide {
+  transform: translateX(-100%);
+}
+
+.slide.next-slide {
+  transform: translateX(100%);
+}
+
+.slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide:hover a {
+  opacity: 1;
+}
+
+.slide a:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.slide.initial-slide{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0%);
+}
+
+.slide.active-slide {
+  animation-name: slide-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.slide.previous-slide {
+  animation-name: slide-out-previous;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.slide.next-slide {
+  animation-name: slide-out-next;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out-previous {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-out-next {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+
+
+#content {
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 100%;
+  position: relative;
+  top: 100px;
+  width: 80%;
+}
+
+main {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+main.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title {
+  text-align: center;
+  background: url(../images/hr.jpg) no-repeat center bottom;
+  height: 60px;
+  line-height: 76px;
+  color: #0f8f3a;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 14px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.flex-item {
+  flex-basis: calc(33.33% - 30px);
+  margin: 15px;
+  text-align: center;
+  max-width: 400px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out,opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.flex-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flex-item:hover {
+  transform: translateY(-10px);
+}
+
+.flex-item img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.flex-item h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.flex-item p {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease forwards;
+}

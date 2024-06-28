@@ -17,14 +17,21 @@
     "appId": "com.example.app",
     "files": [
       "dist/**/*",
-      "electron/main.js" 
+      "electron/main.js"
     ],
-    "extends": null
+    "extends": null,
+    "extraResources": [
+      {
+        "from": "D:\\Python\\Python311\\",
+        "to": "python"
+      }
+    ]
   },
   "dependencies": {
     "axios": "^1.7.2",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
