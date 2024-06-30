@@ -1,15 +1,17 @@
-window.onscroll = function () {
-    stickyNav();
-}
-let navbar = document.getElementsByTagName("header")[0];
-let sticky = navbar.offsetTop;
+// stickyNav.js
 
-function stickyNav() {
-    if (window.pageYOffset > sticky) {
+export function initializeStickyNav(headerElement) {
+    window.addEventListener('scroll', () => stickyNav(headerElement));
+    let sticky = headerElement.offsetTop;
+  
+    function stickyNav(navbar) {
+      if (window.pageYOffset > sticky) {
         navbar.classList.add("sticky");
         navbar.classList.add("scrolled");
-    } else {
+      } else {
         navbar.classList.remove("sticky");
         navbar.classList.remove("scrolled");
+      }
     }
-}
+  }
+  
