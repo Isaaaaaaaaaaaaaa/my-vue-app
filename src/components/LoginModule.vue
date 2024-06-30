@@ -138,6 +138,11 @@ export default {
       verificationCode: this.generateCode(),
     };
   },
+  computed: {
+    isHomePage() {
+      return this.$route.path === "/";
+    },
+  },
   methods: {
     hideLogin() {
       this.isVisible = false;
@@ -182,8 +187,14 @@ export default {
           this.hideLogin();
           // 设置 session 或者 token
           document.cookie = `session=${response.data.session}; path=/`;
-          // 刷新页面
-          window.location.reload();
+
+          if (this.isHomePage) {
+            // 刷新页面
+            window.location.reload();
+          } else {
+            // 跳转到首页
+            this.$router.push("/");
+          }
         } catch (error) {
           alert("登录失败！");
         }
