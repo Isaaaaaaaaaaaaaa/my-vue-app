@@ -1,4 +1,5 @@
 <template>
+  <PreLoader />
   <NavBar />
   <LoginModule />
   <div class="home">
@@ -19,6 +20,7 @@ import LoginModule from "@/components/LoginModule.vue";
 import FooterModule from "@/components/FooterModule.vue";
 import SliderModule from "@/components/SliderModule.vue";
 import ProjectIntro from "@/components/ProjectIntro.vue";
+import PreLoader from '@/components/PreLoader.vue';
 
 export default {
   name: "HomePage",
@@ -28,6 +30,7 @@ export default {
     FooterModule,
     SliderModule,
     ProjectIntro,
+    PreLoader,
   },
 };
 </script>

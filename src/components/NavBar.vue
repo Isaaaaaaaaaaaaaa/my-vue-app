@@ -8,6 +8,11 @@
         <ul class="nav-left">
           <li><router-link to="/" class="nav-link">首页</router-link></li>
           <li>
+            <router-link to="/animal-intro" class="nav-link"
+              >野生动物</router-link
+            >
+          </li>
+          <li>
             <router-link to="/animal-detect" class="nav-link"
               >图像识别</router-link
             >
@@ -15,11 +20,6 @@
           <li>
             <router-link to="/animal-data" class="nav-link"
               >数据分析</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/animal-intro" class="nav-link"
-              >野生动物</router-link
             >
           </li>
         </ul>

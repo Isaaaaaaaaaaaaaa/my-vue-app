@@ -1,4 +1,5 @@
 <template>
+  <LoadingAnime />
   <NavBar />
   <LoginModule />
     <div class="animal-data">
@@ -14,6 +15,7 @@
   import LoginModule from '@/components/LoginModule.vue';
   import FooterModule from '@/components/FooterModule.vue';
   import ImgBanner from '@/components/ImgBanner.vue';
+  import LoadingAnime from '@/components/LoadingAnime.vue';
 
   export default {
     name: 'AnimalData',
@@ -22,6 +24,7 @@
       LoginModule,
       FooterModule,
       ImgBanner,
+      LoadingAnime,
     },
   };
   </script>

@@ -1,4 +1,5 @@
 <template>
+  <PreLoader />
   <div>
     <NavBar />
     <div class="animal-intro">
@@ -29,6 +30,7 @@
 import NavBar from '@/components/NavBar.vue';
 import FooterModule from '@/components/FooterModule.vue';
 import ImgBanner from '@/components/ImgBanner.vue';
+import PreLoader from '@/components/PreLoader.vue';
 
 export default {
   name: 'AnimalIntro',
@@ -36,6 +38,7 @@ export default {
     NavBar,
     FooterModule,
     ImgBanner,
+    PreLoader,
   },
   data() {
     return {
