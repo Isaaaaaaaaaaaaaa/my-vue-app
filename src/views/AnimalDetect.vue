@@ -3,7 +3,7 @@
   <NavBar />
   <LoginModule />
     <div class="animal-detect">
-      <ImgBanner :image-src="require('@/assets/images/humanity.jpg')" />
+      <ImgBanner :image-src="require('@/assets/images//banner.jpg')" />
       <DetectModule class="detect"/>
     </div>
     <FooterModule />

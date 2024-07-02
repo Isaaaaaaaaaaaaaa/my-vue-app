@@ -134,7 +134,7 @@ import axios from "@/axiosInstance";
 export default {
   data() {
     return {
-      imageSrc: require("@/assets/images/slideImg1.jpeg"), // 默认图片路径
+      imageSrc: require("@/assets/images/slideImg1.jpg"), // 默认图片路径
       resultText: "识别结果：这是一只鹿。",
       activeTab: 1, // 默认选中第一个标签页
     };

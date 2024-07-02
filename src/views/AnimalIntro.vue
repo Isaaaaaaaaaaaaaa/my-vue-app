@@ -3,7 +3,7 @@
   <div>
     <NavBar />
     <div class="animal-intro">
-      <ImgBanner :image-src="require('@/assets/images/humanity.jpg')" />
+      <ImgBanner :image-src="require('@/assets/images/banner.jpg')" />
       <div class="main-content">
         <h2>动物种类</h2>
         <div class="row">
@@ -182,11 +182,11 @@ export default {
   position: relative;
   top: 100px;
   margin: 0 auto;
-  max-width: 1600px;
 }
 
 .main-content {
-  margin-top: 20px; /* 适当的间距 */
+  margin: 20px auto; /* 适当的间距 */
+  max-width: 1600px;
 }
 
 .row {

@@ -21,8 +21,8 @@ export default {
     return {
       slideIndex: 0,
       slides: [
-        { image: require('@/assets/images/slideImg1.jpeg'), link: "/animal-detect" },
-        { image: require('@/assets/images/slideImg2.webp'), link: '/animal-intro' },
+        { image: require('@/assets/images/slideImg1.jpg'), link: "/animal-detect" },
+        { image: require('@/assets/images/slideImg2.jpg'), link: '/animal-intro' },
         { image: require('@/assets/images/slideImg3.jpg'), link: '/animal-data' }
       ]
     };
