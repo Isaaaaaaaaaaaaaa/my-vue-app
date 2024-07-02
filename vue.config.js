@@ -4,4 +4,7 @@ module.exports = defineConfig({
 })
 module.exports = {
   publicPath: './',
+  css: {
+    extract: false
+  }
   }
