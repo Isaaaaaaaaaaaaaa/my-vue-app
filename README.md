@@ -5,14 +5,14 @@ It features user authentication, image upload, and object detection capabilities
 ## Prerequisites
 ### Frontend
 
-Node.js v16.0.0 or above
-npm (Node Package Manager)
+Node.js v16.0.0 or above  
+npm (Node Package Manager)  
 
 ### Backend
 
-Python v3.8 or above
-pip (Python Package Installer)
-MySQL database
+Python v3.8 or above  
+pip (Python Package Installer)  
+MySQL database  
 
 ## Frontend Setup
 ```
