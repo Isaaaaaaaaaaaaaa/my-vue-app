@@ -1,6 +1,20 @@
 # my-vue-app
+This project is a full-stack application combining a Vue.js frontend and a Flask backend. 
+It features user authentication, image upload, and object detection capabilities.
 
-## Project setup
+## Prerequisites
+### Frontend
+
+Node.js v16.0.0 or above
+npm (Node Package Manager)
+
+### Backend
+
+Python v3.8 or above
+pip (Python Package Installer)
+MySQL database
+
+## Frontend Setup
 ```
 npm install
 ```
@@ -10,7 +24,7 @@ npm install
 npm run serve
 ```
 
-### Compiles and hot-reloads for app's development
+### Compiles and Hot-Reloads for App Development
 ```
 npm run electron:serve
 ```
@@ -20,21 +34,42 @@ npm run electron:serve
 npm run build
 ```
 
-### Compiles and minifies for app
+### Compiles and Minifies for Electron App 
 ```
 npm run electron:build
 ```
 
-### Lints and fixes files
+## Backend Setup
+
+### Navigate to Backend Directory
 ```
-npm run lint
+cd backend
 ```
 
-### Login and start mysql
+### Create and Activate Virtual Environment (Optional but Recommended)
+```
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
+
+### Install Dependencies:
+```
+pip install -r requirements.txt
+```
+
+### Start MySQL Database
 ```
 mysql -u root -p
 ```
 
+### Initialize Database
+```
+CREATE DATABASE user_data;
+USE user_data;
+python models.py
+```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Start the backend server:
+```
+python app.py
+```

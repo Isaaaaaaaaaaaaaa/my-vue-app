@@ -10,14 +10,54 @@
           <div class="sidebar">
             <h3>选择动物</h3>
             <ul>
-              <li v-for="(animal, index) in animalTypes" :key="index" @click="selectAnimal(animal)">
+              <li
+                v-for="(animal, index) in animalTypes"
+                :key="index"
+                @click="selectAnimal(animal)"
+              >
                 {{ animal.name }}
               </li>
             </ul>
           </div>
           <div class="animal-info">
-            <h2 v-if="selectedAnimal" class="animal-title">{{ selectedAnimal.name }}</h2>
-            <p v-if="selectedAnimal" class="animal-description">{{ selectedAnimal.description }}</p>
+            <div v-if="selectedAnimal">
+              <h2 class="animal-title">{{ selectedAnimal.name }}</h2>
+              <p class="animal-description">{{ selectedAnimal.description }}</p>
+            </div>
+            <div v-else>
+              <h2 class="animal-title">欢迎探索野生动物</h2>
+              <p class="animal-description">点击左侧动物名称了解更多信息。</p>
+            </div>
+            <!-- 新增的模块 -->
+            <div class="row mt-5">
+              <div class="col-md-6">
+                <div class="card shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">动物生态信息</h5>
+                    <p class="card-text">
+                      在其自然栖息地中，{{
+                        selectedAnimal ? selectedAnimal.name : "这种动物"
+                      }}通常生活在...
+                    </p>
+                    <a href="#" class="btn btn-primary">了解更多</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">保护状态</h5>
+                    <p class="card-text">
+                      {{
+                        selectedAnimal ? selectedAnimal.name : "这种动物"
+                      }}的保护状况及相关措施...
+                    </p>
+                    <a href="#" class="btn btn-primary">支持保护</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 新增结束 -->
           </div>
         </div>
       </div>
@@ -27,13 +67,13 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue';
-import FooterModule from '@/components/FooterModule.vue';
-import ImgBanner from '@/components/ImgBanner.vue';
-import PreLoader from '@/components/PreLoader.vue';
+import NavBar from "@/components/NavBar.vue";
+import FooterModule from "@/components/FooterModule.vue";
+import ImgBanner from "@/components/ImgBanner.vue";
+import PreLoader from "@/components/PreLoader.vue";
 
 export default {
-  name: 'AnimalIntro',
+  name: "AnimalIntro",
   components: {
     NavBar,
     FooterModule,
@@ -43,13 +83,75 @@ export default {
   data() {
     return {
       animalTypes: [
-        { id: 1, name: '狮子', description: '狮子是一种大型猫科动物，生活在非洲和印度次大陆。' },
-        { id: 2, name: '大象', description: '大象是世界上最大的陆生动物，主要分布在非洲和亚洲。' },
-        { id: 3, name: '斑马', description: '斑马是一种非洲草原上的哺乳动物，以其黑白相间的条纹而著称。' },
-        { id: 4, name: '长颈鹿', description: '长颈鹿是世界上最高的陆地动物，主要分布在非洲的草原和森林地带。' },
-        { id: 5, name: '犀牛', description: '犀牛是一种体型庞大的哺乳动物，主要分布在非洲和亚洲。' },
-        { id: 6, name: '袋鼠', description: '袋鼠是一种澳大利亚特有的有袋动物，能够以跳跃方式高效移动。' },
-        // 添加更多动物类型...
+        {
+          id: 1,
+          name: "狮子",
+          description: "狮子是一种大型猫科动物，生活在非洲和印度次大陆。",
+        },
+        {
+          id: 2,
+          name: "大象",
+          description: "大象是世界上最大的陆生动物，主要分布在非洲和亚洲。",
+        },
+        {
+          id: 3,
+          name: "斑马",
+          description:
+            "斑马是一种非洲草原上的哺乳动物，以其黑白相间的条纹而著称。",
+        },
+        {
+          id: 4,
+          name: "长颈鹿",
+          description:
+            "长颈鹿是世界上最高的陆地动物，主要分布在非洲的草原和森林地带。",
+        },
+        {
+          id: 5,
+          name: "犀牛",
+          description: "犀牛是一种体型庞大的哺乳动物，主要分布在非洲和亚洲。",
+        },
+        {
+          id: 6,
+          name: "袋鼠",
+          description:
+            "袋鼠是一种澳大利亚特有的有袋动物，能够以跳跃方式高效移动。",
+        },
+        {
+          id: 7,
+          name: "老虎",
+          description:
+            "老虎是一种大型猫科动物，生活在亚洲各地的森林和草原地带。",
+        },
+        {
+          id: 8,
+          name: "猴子",
+          description:
+            "猴子是灵长目动物的一类，主要分布在亚洲、非洲和南美洲的各种环境中。",
+        },
+        {
+          id: 9,
+          name: "考拉",
+          description:
+            "考拉是一种澳大利亚特有的树栖有袋动物，以其爱睡觉和食用桉树叶而著称。",
+        },
+        {
+          id: 10,
+          name: "企鹅",
+          description:
+            "企鹅是一种生活在南极洲和周围海域的鸟类，以其不会飞行而著称，是优秀的游泳者。",
+        },
+        {
+          id: 11,
+          name: "北极熊",
+          description:
+            "北极熊是生活在北极地区的大型食肉动物，以其白色的皮毛和潜水捕猎能力而著称。",
+        },
+        {
+          id: 12,
+          name: "鳄鱼",
+          description:
+            "鳄鱼是一种生活在热带和亚热带地区的大型爬行动物，以其危险的捕食能力而著称。",
+        },
       ],
       selectedAnimal: null,
     };
@@ -59,13 +161,15 @@ export default {
       this.selectedAnimal = animal;
       // 在此处添加选中动物后的动画效果或特效逻辑
       // 例如，可以添加选中特效或动画
-      const selectedElement = document.querySelector('.sidebar li.active');
+      const selectedElement = document.querySelector(".sidebar li.active");
       if (selectedElement) {
-        selectedElement.classList.remove('active');
+        selectedElement.classList.remove("active");
       }
-      const newSelectedElement = document.querySelector(`.sidebar li:nth-child(${animal.id})`);
+      const newSelectedElement = document.querySelector(
+        `.sidebar li:nth-child(${animal.id})`
+      );
       if (newSelectedElement) {
-        newSelectedElement.classList.add('active');
+        newSelectedElement.classList.add("active");
       }
     },
   },
@@ -77,6 +181,8 @@ export default {
   text-align: center;
   position: relative;
   top: 100px;
+  margin: 0 auto;
+  max-width: 1600px;
 }
 
 .main-content {
@@ -112,7 +218,8 @@ export default {
   transition: background-color 0.3s ease;
 }
 
-.sidebar li:hover, .sidebar li.active {
+.sidebar li:hover,
+.sidebar li.active {
   background-color: #e0e0e0;
 }
 

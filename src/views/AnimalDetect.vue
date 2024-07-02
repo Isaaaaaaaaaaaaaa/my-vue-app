@@ -4,8 +4,7 @@
   <LoginModule />
     <div class="animal-detect">
       <ImgBanner :image-src="require('@/assets/images/humanity.jpg')" />
-      <h1>野生动物识别</h1>
-      <p>这里是野生动物识别的内容</p>
+      <DetectModule class="detect"/>
     </div>
     <FooterModule />
   </template>
@@ -16,6 +15,7 @@
   import FooterModule from '@/components/FooterModule.vue';
   import ImgBanner from '@/components/ImgBanner.vue';
   import LoadingAnime from '@/components/LoadingAnime.vue';
+  import DetectModule from '@/components/DetectModule.vue';
 
   export default {
     name: 'AnimalDetect',
@@ -25,6 +25,7 @@
       FooterModule,
       ImgBanner,
       LoadingAnime,
+      DetectModule,
     },
   };
   </script>
@@ -34,6 +35,10 @@
     text-align: center;
     position: relative;
     top:100px;
+  }
+
+  .detect{
+    margin: 40px;
   }
   </style>
   
