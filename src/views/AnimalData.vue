@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LoadingAnime />
+    <PreLoader />
     <NavBar />
     <LoginModule />
     <ImgBanner :image-src="require('@/assets/images/banner.jpg')" class="banner" />
@@ -115,7 +115,7 @@ import NavBar from "@/components/NavBar.vue";
 import LoginModule from "@/components/LoginModule.vue";
 import FooterModule from "@/components/FooterModule.vue";
 import ImgBanner from "@/components/ImgBanner.vue";
-import LoadingAnime from "@/components/LoadingAnime.vue";
+import PreLoader from "@/components/PreLoader.vue";
 import Chart from "chart.js/auto";
 
 export default {
@@ -125,7 +125,7 @@ export default {
     LoginModule,
     FooterModule,
     ImgBanner,
-    LoadingAnime,
+    PreLoader,
   },
   data() {
     return {

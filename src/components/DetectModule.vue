@@ -130,6 +130,7 @@
 
 <script>
 import axios from "@/axiosInstance";
+import EventBus from "@/eventBus";
 
 export default {
   data() {
@@ -154,6 +155,8 @@ export default {
     },
     onRecognize() {
       if (this.imageSrc) {
+        EventBus.emit('recognize-start');
+
         const formData = new FormData();
 
         const blob = this.dataURItoBlob(this.imageSrc);
@@ -191,11 +194,14 @@ export default {
             // 获取对象计数描述文本
             const objectCountsText = responseData.object_counts_text;
             this.resultText = objectCountsText || "未识别到任何对象.";
+            EventBus.emit('recognize-end');
           })
           .catch((error) => {
             console.error("Error during recognition:", error);
             this.resultText = "识别失败，请重试。";
+            EventBus.emit('recognize-end');
           });
+          
       } else {
         alert("请先选择图片文件！");
       }

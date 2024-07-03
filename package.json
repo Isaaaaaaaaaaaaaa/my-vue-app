@@ -32,7 +32,9 @@
     "artifactName": "${productName}-Setup-${version}.${ext}",
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
+      "perMachine": true,
+      "allowElevation": true, 
+      "allowToChangeInstallationDirectory": true, 
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "MyElectronApp"
