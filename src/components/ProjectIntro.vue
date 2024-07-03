@@ -1,18 +1,24 @@
 <template>
-  <main :class="{ show: isLoaded }">
-    <p class="title">野生动物保护项目概述</p>
-    <div class="flex-container">
+  <main class="container py-5">
+    <h1 class="text-center title animate__animated animate__fadeInDown">
+      野生动物保护项目概述
+    </h1>
+    <div class="row flex-container">
       <div
-        class="flex-item"
+        class="col-md-4 flex-item animate__animated animate__fadeInUp"
         v-for="(item, index) in items"
         :key="index"
-        :class="{ show: isInViewport[index] }"
-        ref="flexItems"
       >
         <router-link :to="item.link" class="item-link">
-          <img :src="require('@/assets/' + item.image)" alt="" />
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.content }}</p>
+          <img
+            :src="require('@/assets/' + item.image)"
+            class="img-fluid rounded-top"
+            alt=""
+          />
+          <div class="card-body">
+            <h2 class="card-title">{{ item.title }}</h2>
+            <p class="card-text">{{ item.content }}</p>
+          </div>
         </router-link>
       </div>
     </div>
@@ -23,8 +29,6 @@
 export default {
   data() {
     return {
-      isLoaded: false,
-      isInViewport: [], // 用于存储是否在视口中的布尔值数组
       items: [
         {
           image: "images/index/indexImg1.jpg",
@@ -71,55 +75,11 @@ export default {
       ],
     };
   },
-  mounted() {
-    this.handleLoadAnimation();
-    window.addEventListener("scroll", this.handleScrollAnimation);
-  },
-  beforeUnmount() {
-    window.removeEventListener("scroll", this.handleScrollAnimation);
-  },
-  methods: {
-    checkIsInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      const threshold = 100; // 阈值，单位为像素
-      return (
-        rect.top >= -threshold &&
-        rect.left >= -threshold &&
-        rect.bottom - threshold <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right - threshold <=
-          (window.innerWidth || document.documentElement.clientWidth)
-      );
-    },
-    handleScrollAnimation() {
-      this.$refs.flexItems.forEach((item, index) => {
-        if (this.checkIsInViewport(item)) {
-          this.isInViewport[index] = true;
-          this.isInViewport = [...this.isInViewport]; // 强制更新响应式数据
-        }
-      });
-    },
-    handleLoadAnimation() {
-      this.isLoaded = true;
-    },
-  },
 };
 </script>
 
 <style scoped>
-main {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-main.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .title {
-  text-align: center;
   background: url("@/assets/images/hr.jpg") no-repeat center bottom;
   height: 60px;
   line-height: 76px;
@@ -127,6 +87,7 @@ main.show {
   font-size: 24px;
   font-weight: bold;
   margin: 14px;
+  padding: auto;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -134,54 +95,46 @@ main.show {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 1200px;
-  min-height: 100vh;
-  padding: 20px;
+  gap: 15px; /* 调整间距 */
 }
 
 .flex-item {
-  flex-basis: calc(33.33% - 30px);
-  margin: 15px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   max-width: 400px;
   height: auto;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out, opacity 0.6s ease, transform 0.6s ease;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.flex-item.show {
-  opacity: 1;
-  transform: translateY(0);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .flex-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px); /* 调整浮动效果的距离 */
 }
 
 .flex-item img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.flex-item h2 {
-  margin-top: 20px;
-  font-size: 24px;
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #333;
+  margin: 10px 0;
 }
 
-.flex-item p {
-  padding: 20px;
-  font-size: 16px;
-  line-height: 1.5;
+.card-text {
+  font-size: 1rem;
+  color: #666;
 }
 
 .item-link {
@@ -190,18 +143,9 @@ main.show {
   text-decoration: none;
 }
 
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* 动画库 */
+@import '~animate.css/animate.min.css';
 
-.slide-in {
-  animation: slideIn 0.6s ease forwards;
-}
+/* Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
 </style>

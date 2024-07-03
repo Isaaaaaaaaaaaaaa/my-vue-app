@@ -124,8 +124,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #e8eae6;
-  color: #333;
+  background-color: #f2f2f2; /* 浅灰色背景 */
+  color: #333; /* 深灰色文字 */
   font-size: 16px;
   padding: 20px;
   z-index: 999;
@@ -142,8 +142,8 @@ nav {
 .split-nav {
   display: flex;
   justify-content: space-between;
-  background-color: #e9ede6;
-  color: #fff;
+  background-color: #f2f2f2; 
+  color: #fff; /* 白色文字 */
   padding: 10px;
 }
 
@@ -182,14 +182,14 @@ nav {
   padding: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #637dba;
+  color: #637dba; /* 深蓝色文字 */
   transition: all 0.3s ease-in-out;
 }
 
 .nav-left a:hover,
 .nav-right a:hover {
-  color: #e7e7e7;
-  background-color: #676767;
+  color: #e7e7e7; /* 浅灰色文字 */
+  background-color: #676767; /* 深灰色背景 */
   border-radius: 3px;
 }
 
@@ -197,35 +197,36 @@ nav {
   font-family: "方正硬笔行楷";
   font-size: 50px;
   line-height: 60px;
-  color: #637dba;
+  color: #637dba; /* 深蓝色文字 */
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 
 .navbar-logo:hover {
-  color: #475881;
+  color: #475881; /* 深蓝色文字 */
 }
 
 header.scrolled,
 header.scrolled .split-nav {
-  background-color: #333;
-  color: #e7e7e7;
+  background-color: #333; /* 深灰色背景 */
+  color: #e7e7e7; /* 浅灰色文字 */
   padding: 15px;
   opacity: 0.8;
 }
 
 header.scrolled .navbar-logo {
-  color: #e7e7e7;
+  color: #e7e7e7; /* 浅灰色文字 */
 }
 
 header.scrolled .nav-left a,
 header.scrolled .nav-right a {
-  color: #e7e7e7;
+  color: #e7e7e7; /* 浅灰色文字 */
 }
 
 header.scrolled .nav-left a:hover,
 header.scrolled .nav-right a:hover {
-  color: #333;
-  background-color: #e5e8e1;
+  color: #333; /* 深灰色文字 */
+  background-color: #e7e7e7; /* 浅灰色背景 */
 }
 </style>
+
