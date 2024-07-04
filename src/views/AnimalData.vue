@@ -106,8 +106,8 @@
         </div>
       </div>
     </div>
-    <FooterModule />
   </div>
+  <FooterModule class="footer-style" />
 </template>
 
 <script>
@@ -309,7 +309,7 @@ export default {
 </script>
 
 <style scoped>
-.banner {
+.banner ,.footer-style{
   position: relative;
   top: 100px;
 }

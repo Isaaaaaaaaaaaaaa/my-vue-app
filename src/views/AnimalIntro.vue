@@ -75,8 +75,8 @@
         </div>
       </div>
     </div>
-    <FooterModule />
   </div>
+  <FooterModule class="footer-style" />
 </template>
 
 <script>
@@ -183,7 +183,7 @@ export default {
 </script>
 
 <style scoped>
-.animal-intro {
+.animal-intro ,.footer-style{
   text-align: center;
   position: relative;
   top: 100px;

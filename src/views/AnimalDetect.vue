@@ -7,7 +7,7 @@
     <ImgBanner :image-src="require('@/assets/images/banner.jpg')" />
     <DetectModule class="detect" />
   </div>
-  <FooterModule />
+  <FooterModule class="footer-style" />
 </template>
 
 <script>
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style scoped>
-.animal-detect {
+.animal-detect ,.footer-style{
   text-align: center;
   position: relative;
   top: 100px;

@@ -211,5 +211,35 @@ def status():
     else:
         return jsonify({"logged_in": False})
 
+@app.route('/api/comments', methods=['GET', 'POST'])
+def handle_comments():
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    
+    if request.method == 'GET':
+        cursor.execute('SELECT * FROM comments ORDER BY timestamp DESC')
+        comments = cursor.fetchall()
+        conn.close()
+        return jsonify(comments)
+    
+    if request.method == 'POST':
+        data = request.json
+        cursor.execute('''
+            INSERT INTO comments (username, content, timestamp, likes)
+            VALUES (%s, %s, CURRENT_TIMESTAMP, %s)
+        ''', (data['username'], data['content'], data.get('likes', 0)))
+        conn.commit()
+        conn.close()
+        return jsonify({'status': 'success'})
+
+@app.route('/api/comments/like/<int:comment_id>', methods=['POST'])
+def like_comment(comment_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('UPDATE comments SET likes = likes + 1 WHERE id = %s', (comment_id,))
+    conn.commit()
+    conn.close()
+    return jsonify({'status': 'success'})
+
 if __name__ == '__main__':
     app.run(debug=True)

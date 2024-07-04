@@ -11,7 +11,6 @@
       欢迎来到野生动物平台，本项目利用深度学习技术对红外相机拍摄的野生动物图像进行自动识别和分类，开发了一个野生动物数据分析平台，为野生动物监测和生物多样性保护提供技术支持。项目不仅探索和改进了适合野生动物识别的深度学习模型，还为野生动物的栖息环境、生活习性、活动规律等提供科学依据，推动了红外图像处理和识别技术的创新与发展。
     </p>
 
-    
     <ProjectIntro />
     
     <!-- 特性模块 -->
@@ -81,40 +80,8 @@
 
     <!-- 互动模块 -->
     <div class="interactive-section py-5 animate__animated animate__fadeInUp">
-      <h2 class="mb-4">加入我们的社群</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card border-0 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">用户评论</h5>
-              <form @submit.prevent="submitComment">
-                <div class="mb-3">
-                  <textarea v-model="comment" class="form-control comment-input" placeholder="留下你的评论"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">提交</button>
-              </form>
-              <div v-if="comments.length" class="mt-4">
-                <h6>最新评论</h6>
-                <ul class="list-unstyled">
-                  <li v-for="(comment, index) in comments" :key="index" class="mb-2 comment-item">
-                    <div class="bg-light p-2 rounded shadow-sm">{{ comment }}</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body d-flex align-items-center justify-content-center">
-              <button class="btn btn-primary btn-lg mx-2">联系我们</button>
-              <button class="btn btn-info btn-lg mx-2">关注我们的GitHub账号</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CommentSection />
     </div>
-
   </div>
   <FooterModule />
 </template>
@@ -126,6 +93,7 @@ import FooterModule from "@/components/FooterModule.vue";
 import SliderModule from "@/components/SliderModule.vue";
 import ProjectIntro from "@/components/ProjectIntro.vue";
 import PreLoader from '@/components/PreLoader.vue';
+import CommentSection from "@/components/CommentSection.vue";  // 导入新的组件
 
 export default {
   name: "HomePage",
@@ -136,20 +104,7 @@ export default {
     SliderModule,
     ProjectIntro,
     PreLoader,
-  },
-  data() {
-    return {
-      comment: '',
-      comments: []
-    };
-  },
-  methods: {
-    submitComment() {
-      if (this.comment.trim()) {
-        this.comments.push(this.comment);
-        this.comment = '';
-      }
-    }
+    CommentSection,  // 注册新的组件
   }
 };
 </script>
@@ -193,29 +148,8 @@ export default {
   font-weight: bold;
 }
 
-.interactive-section .btn {
-  margin-bottom: 1rem;
-}
-
-.interactive-section .card-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.comment-input {
-  resize: none;
-}
-
-.comment-item {
-  margin-bottom: 0.5rem;
-}
-
-.comment-item div {
-  padding: 1rem;
-  background: linear-gradient(145deg, #f0f0f0, #d8d8d8);
-  box-shadow: 3px 3px 6px #bababa, -3px -3px 6px #ffffff;
+.interactive-section {
+  margin: 3rem auto;
 }
 
 /* 动画库 */
