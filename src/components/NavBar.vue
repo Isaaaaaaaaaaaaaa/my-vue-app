@@ -2,7 +2,7 @@
   <header :class="{ scrolled: isScrolled }">
     <nav>
       <div class="navbar-header">
-        <router-link to="/" class="navbar-logo">唐统一·牛逼</router-link>
+        <router-link to="/" class="navbar-logo">鉴图识灵</router-link>
       </div>
       <div class="split-nav">
         <ul class="nav-left">

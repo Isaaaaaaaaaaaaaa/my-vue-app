@@ -87,7 +87,6 @@ export default {
     ImgBanner,
     PreLoader,
     WildlifeEnvironment,
-
   },
   data() {
     return {

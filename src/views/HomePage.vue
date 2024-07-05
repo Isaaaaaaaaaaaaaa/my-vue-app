@@ -3,8 +3,7 @@
   <NavBar />
   <LoginModule />
   <div class="home container">
-    <SliderModule />
-
+    <AnimalCarousel />
     <!-- 关于我们 -->
     <h1 class="display-4 mt-5 mb-4 animate__animated animate__fadeIn">关于我们</h1>
     <p class="lead animate__animated animate__fadeInUp">
@@ -52,25 +51,25 @@
       <h2 class="mb-4">数据统计</h2>
       <div class="row text-center">
         <div class="col-md-3">
-          <div class="stat-item p-4 rounded shadow-sm bg-gradient-primary text-white">
+          <div class="stat-item p-4 rounded shadow-lg bg-gradient-primary text-white animate__animated animate__zoomIn animate__delay-1s">
             <h3>10,000+</h3>
             <p>处理图像</p>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="stat-item p-4 rounded shadow-sm bg-gradient-success text-white">
+          <div class="stat-item p-4 rounded shadow-lg bg-gradient-success text-white animate__animated animate__zoomIn animate__delay-2s">
             <h3>500+</h3>
             <p>识别种类</p>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="stat-item p-4 rounded shadow-sm bg-gradient-warning text-white">
+          <div class="stat-item p-4 rounded shadow-lg bg-gradient-warning text-white animate__animated animate__zoomIn animate__delay-3s">
             <h3>100+</h3>
             <p>用户研究团队</p>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="stat-item p-4 rounded shadow-sm bg-gradient-danger text-white">
+          <div class="stat-item p-4 rounded shadow-lg bg-gradient-danger text-white animate__animated animate__zoomIn animate__delay-4s">
             <h3>2000+</h3>
             <p>网站点击量</p>
           </div>
@@ -90,10 +89,10 @@
 import NavBar from "@/components/NavBar.vue";
 import LoginModule from "@/components/LoginModule.vue";
 import FooterModule from "@/components/FooterModule.vue";
-import SliderModule from "@/components/SliderModule.vue";
 import ProjectIntro from "@/components/ProjectIntro.vue";
 import PreLoader from '@/components/PreLoader.vue';
 import CommentSection from "@/components/CommentSection.vue";  // 导入新的组件
+import AnimalCarousel from '@/components/AnimalCarousel.vue';
 
 export default {
   name: "HomePage",
@@ -101,10 +100,10 @@ export default {
     NavBar,
     LoginModule,
     FooterModule,
-    SliderModule,
     ProjectIntro,
     PreLoader,
     CommentSection,  // 注册新的组件
+    AnimalCarousel,
   }
 };
 </script>
@@ -141,6 +140,13 @@ export default {
 .stats-section .stat-item {
   margin-bottom: 2rem;
   text-align: center;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stats-section .stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .stats-section .stat-item h3 {
@@ -170,5 +176,9 @@ export default {
 
 .bg-gradient-danger {
   background: linear-gradient(45deg, #ea4335, #d93025);
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 </style>

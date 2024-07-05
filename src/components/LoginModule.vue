@@ -239,7 +239,7 @@ export default {
 <style scoped>
 /* 背景 */
 #form-background.show {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(135deg, rgba(173, 216, 230, 0.8), rgba(230, 230, 250, 0.8));
   width: 100%;
   height: 100%;
   position: fixed;
@@ -247,22 +247,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeInBackground 0.6s ease-in-out;
 }
 
-/* 表单容器 */
-.form-container {
-  position: relative;
-  z-index: 999;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 450px; /* 增加宽度 */
-  background-color: #f9f9f9;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  animation: fadeIn 0.5s ease-in-out; /* 淡入动画 */
-}
-
-@keyframes fadeIn {
+@keyframes fadeInBackground {
   from {
     opacity: 0;
   }
@@ -271,140 +259,148 @@ export default {
   }
 }
 
+/* 表单容器 */
+.form-container {
+  position: relative;
+  z-index: 999;
+  width: 450px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* 关闭按钮 */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
+  top: 15px;
+  right: 15px;
+  font-size: 1.8rem;
   cursor: pointer;
   z-index: 2;
-  color: #888;
-  transition: color 0.3s ease-in-out;
+  color: #999;
+  transition: color 0.3s ease;
 }
 
 .close-btn:hover {
-  color: #ff0000;
+  color: #007bff;
 }
 
 /* 导航切换 */
 #switch {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
 }
 
 #switch li {
-  font-size: 1.2rem;
   list-style: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+  border-radius: 30px;
+  transition: all 0.3s ease;
 }
 
 #switch li.active {
-  background-color: #c00;
+  background-color: #007bff;
   color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* 表单项 */
 .form-item {
   margin-bottom: 1.5rem;
-  width: 100%; /* 确保每个表单项占满宽度 */
+  width: 100%;
 }
 
-/* 表单标签 */
 .form-container label {
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-align: left;
+  color: #555;
 }
 
-/* 输入框样式 */
-.form-container input[type="text"],
-.form-container input[type="password"] {
-  width: calc(100% - 20px); /* 确保输入框宽度 */
-  padding: 0.75rem; /* 增加内边距 */
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.form-container input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   box-sizing: border-box;
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: border-color 0.3s ease;
 }
 
-.form-container input[type="text"]:focus,
-.form-container input[type="password"]:focus {
-  border-color: #0077cc;
-  box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
+.form-container input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
-.form-container form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%; /* 确保表单占满容器宽度 */
-}
-
-/* 提交按钮样式 */
-.form-container button[type="submit"] {
-  width: 100%; /* 全宽以保证对齐 */
-  margin-top: 1rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  background-color: #c00;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.form-container button[type="submit"]:hover {
-  background-color: #900;
-  transform: scale(1.05);
-}
-
-/* 验证码框及刷新按钮 */
+/* 验证码区域 */
 .vcbox {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 0.5rem;
-  width: 100%; /* 确保vcbox占满宽度 */
 }
 
 .verification-code {
-  width: calc(100% - 130px); /* 调整宽度 */
-  padding: 0.5rem;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.verification-code:focus {
-  box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
-}
-
-/* 验证码刷新按钮样式 */
-.captcha-refresh {
-  width: 100px; /* 固定宽度 */
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  background-color: #0077cc;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  background: #ddd;
+  border-radius: 8px;
+  margin-left: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  margin-left: 10px; /* 确保元素间有一定空隙 */
+}
+
+.captcha-refresh {
+  margin-left: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .captcha-refresh:hover {
-  background-color: #005bb5;
-  transform: scale(1.05);
-  box-shadow: 0 0 5px rgba(0, 91, 181, 0.5);
+  text-decoration: underline;
+}
+
+/* 按钮样式 */
+#login-submit-btn,
+#register-submit-btn {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#login-submit-btn:hover,
+#register-submit-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+#login-submit-btn:active,
+#register-submit-btn:active {
+  background-color: #007bff;
+  transform: translateY(0);
 }
 </style>
+

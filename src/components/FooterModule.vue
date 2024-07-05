@@ -19,7 +19,7 @@
         <div class="col-md-4 footer-section contact">
           <h5 class="animate__animated animate__fadeInDown">联系我们</h5>
           <ul class="list-unstyled">
-            <li><i class="bi bi-geo-alt-fill"></i> 地址: 北京市海淀区中关村东路1号</li>
+            <li><i class="bi bi-geo-alt-fill"></i> 地址: 北京市海淀区清华东路35号</li>
             <li><i class="bi bi-telephone-fill"></i> 电话: (010) 1234-5678</li>
             <li><i class="bi bi-envelope-fill"></i> 邮箱: contact@wildlife.cn</li>
             <li>
@@ -50,7 +50,7 @@
 
     <!-- 版权信息 -->
     <div class="footer-bottom text-center py-3 animate__animated animate__fadeIn">
-      <p>&copy; 2024 tty团队 | 保留所有权利</p>
+      <p>&copy; 2024 鉴图识灵团队 | 保留所有权利</p>
     </div>
   </footer>
 </template>
