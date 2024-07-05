@@ -38,7 +38,7 @@ export default {
           link: "/project-intro",
         },
         {
-          image: "images/index/indexImg2.jpeg",
+          image: "images/index/indexImg2.jpg",
           title: "野生动物保护",
           content:
             "我们通过建立保护区和实施保护措施，减少人类活动对野生动物栖息地的破坏，保护濒危物种，维护生态平衡。",
@@ -52,7 +52,7 @@ export default {
           link: "/wildlife-identification",
         },
         {
-          image: "images/index/indexImg4.jpeg",
+          image: "images/index/indexImg4.jpg",
           title: "数据采集与分析",
           content:
             "通过传感器网络和监控系统收集野生动物数据，利用大数据分析技术，对野生动物的行为模式、栖息地选择等进行深入分析。",
@@ -66,7 +66,7 @@ export default {
           link: "/technology-innovation",
         },
         {
-          image: "images/index/indexImg6.jpeg",
+          image: "images/index/indexImg6.jpg",
           title: "公众参与",
           content:
             "我们通过公众教育活动和参与平台，提升公众对野生动物保护的认识，鼓励更多人加入到保护行动中，共同维护地球的生物多样性。",
