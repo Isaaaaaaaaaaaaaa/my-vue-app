@@ -5,6 +5,8 @@
     <div class="animal-intro">
       <ImgBanner :image-src="require('@/assets/images/banner.jpg')" />
       <div class="main-content">
+        <h2>栖息环境</h2>
+        <WildlifeEnvironment />
         <h2>动物种类</h2>
         <div class="row">
           <div class="sidebar">
@@ -75,6 +77,7 @@ import NavBar from "@/components/NavBar.vue";
 import FooterModule from "@/components/FooterModule.vue";
 import ImgBanner from "@/components/ImgBanner.vue";
 import PreLoader from "@/components/PreLoader.vue";
+import WildlifeEnvironment from '@/components/WildlifeEnvironment.vue';
 
 export default {
   name: "AnimalIntro",
@@ -83,6 +86,8 @@ export default {
     FooterModule,
     ImgBanner,
     PreLoader,
+    WildlifeEnvironment,
+
   },
   data() {
     return {

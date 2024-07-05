@@ -6,6 +6,7 @@
   <div class="animal-detect">
     <ImgBanner :image-src="require('@/assets/images/banner.jpg')" />
     <DetectModule class="detect" />
+    <AnimalModelIntro />
   </div>
   <FooterModule class="footer-style" />
 </template>
@@ -19,6 +20,7 @@ import LoadingAnime from "@/components/LoadingAnime.vue";
 import DetectModule from "@/components/DetectModule.vue";
 import PreLoader from "@/components/PreLoader.vue";
 import EventBus from '@/eventBus';
+import AnimalModelIntro from '@/components/AnimalModelIntro.vue'
 
 export default {
   name: "AnimalDetect",
@@ -30,6 +32,7 @@ export default {
     LoadingAnime,
     DetectModule,
     PreLoader,
+    AnimalModelIntro,
   },
   data() {
     return {
