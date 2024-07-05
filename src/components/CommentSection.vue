@@ -2,9 +2,6 @@
 <template>
     <div class="comment-section card border-0 shadow-sm animate__animated animate__fadeInUp">
       <div class="card-body">
-        <h5 class="card-title">
-          评论与留言
-        </h5>
         <form @submit.prevent="submitComment" class="mb-4">
           <div class="form-floating mb-3">
             <textarea v-model="comment" class="form-control" id="commentTextarea" placeholder="留下你的评论"></textarea>

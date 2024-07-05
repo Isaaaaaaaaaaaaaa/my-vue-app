@@ -1,23 +1,22 @@
 <template>
   <main class="container py-5">
-    <h1 class="text-center title animate__animated animate__fadeInDown">
-      野生动物保护项目概述
-    </h1>
-    <div class="row flex-container">
+    <div class="row justify-content-center">
       <div
-        class="col-md-4 flex-item animate__animated animate__fadeInUp"
+        class="col-lg-4 col-md-6 mb-4"
         v-for="(item, index) in items"
         :key="index"
       >
         <router-link :to="item.link" class="item-link">
-          <img
-            :src="require('@/assets/' + item.image)"
-            class="img-fluid rounded-top"
-            alt=""
-          />
-          <div class="card-body">
-            <h2 class="card-title">{{ item.title }}</h2>
-            <p class="card-text">{{ item.content }}</p>
+          <div class="card border-0 rounded shadow-sm">
+            <img
+              :src="require('@/assets/' + item.image)"
+              class="card-img-top rounded-top"
+              alt=""
+            />
+            <div class="card-body bg-white rounded-bottom p-4">
+              <h2 class="card-title h5 mb-3 text-center">{{ item.title }}</h2>
+              <p class="card-text text-muted">{{ item.content }}</p>
+            </div>
           </div>
         </router-link>
       </div>
@@ -79,57 +78,33 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  background: url("@/assets/images/hr.jpg") no-repeat center bottom;
-  height: 60px;
-  line-height: 76px;
-  color: #0f8f3a;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 14px;
-  padding: auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px; /* 调整间距 */
-}
-
-.flex-item {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  max-width: 400px;
-  height: auto;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+.card {
   transition: transform 0.3s ease;
 }
 
-.flex-item:hover {
-  transform: translateY(-10px); /* 调整浮动效果的距离 */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.flex-item img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
+.card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 200px; /* 统一高度 */
+  object-fit: cover; /* 图片填充方式 */
 }
 
 .card-body {
-  padding: 15px;
+  padding: 1.5rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .card-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
-  margin: 10px 0;
+  transition: color 0.3s ease;
 }
 
 .card-text {
@@ -138,14 +113,10 @@ export default {
 }
 
 .item-link {
-  display: block;
   color: inherit;
   text-decoration: none;
 }
 
 /* 动画库 */
 @import '~animate.css/animate.min.css';
-
-/* Bootstrap */
-@import 'bootstrap/dist/css/bootstrap.min.css';
 </style>

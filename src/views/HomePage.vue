@@ -9,7 +9,7 @@
     <p class="lead animate__animated animate__fadeInUp">
       欢迎来到野生动物平台，本项目利用深度学习技术对红外相机拍摄的野生动物图像进行自动识别和分类，开发了一个野生动物数据分析平台，为野生动物监测和生物多样性保护提供技术支持。项目不仅探索和改进了适合野生动物识别的深度学习模型，还为野生动物的栖息环境、生活习性、活动规律等提供科学依据，推动了红外图像处理和识别技术的创新与发展。
     </p>
-
+    <h1 class="display-4 mt-5 mb-4 animate__animated animate__fadeIn">野生动物保护项目概述</h1>
     <ProjectIntro />
     
     <!-- 特性模块 -->
@@ -79,6 +79,7 @@
 
     <!-- 互动模块 -->
     <div class="interactive-section py-5 animate__animated animate__fadeInUp">
+      <h1 class="display-4 mt-5 mb-4 animate__animated animate__fadeIn">评论与留言</h1>
       <CommentSection />
     </div>
   </div>
