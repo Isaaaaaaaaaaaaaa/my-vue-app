@@ -203,15 +203,24 @@ export default {
     async handleRegister() {
       const { username, password, confirmPassword, captcha } =
         this.registerForm;
-      if (captcha !== this.verificationCode) {
-        alert("验证码错误！");
-      } else if (!username) {
-        alert("账号不能为空！");
-      } else if (!password) {
+      if (username.length>10)
+      {
+        alert("用户名长度不能超过10位！");
+        this.registerForm.username='';
+      }else if (!username.trim()) {
+        alert("用户名不能为空！");
+        this.registerForm.username='';
+      } else if (!password.trim()) {
         alert("密码不能为空！");
+        this.registerForm.password='';
+        this.registerForm.confirmPassword = ''
       } else if (password !== confirmPassword) {
         alert("两次输入的密码不一致！");
-      } else {
+        this.registerForm.confirmPassword = '';
+      }else if (captcha !== this.verificationCode) {
+        alert("验证码错误！");
+        this.registerForm.captcha ='';
+      }else {
         try {
           await axios.post("/register", {
             username,
