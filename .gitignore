@@ -6,6 +6,10 @@ node_modules
 # local env files
 .env.local
 .env.*.local
+/backend/venv
+/backend/__pycache__
+/backend/images
+/runs
 
 # Log files
 npm-debug.log*
