@@ -105,6 +105,10 @@ export default {
     PreLoader,
     CommentSection,  // 注册新的组件
     AnimalCarousel,
+  },
+  mounted() {
+    // Scroll to the top of the page on each route change
+    window.scrollTo(0, 0);
   }
 };
 </script>

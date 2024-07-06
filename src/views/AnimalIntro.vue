@@ -2,6 +2,7 @@
   <PreLoader />
   <div>
     <NavBar />
+    <LoginModule />
     <div class="animal-intro">
       <ImgBanner :image-src="require('@/assets/images/banner.jpg')" />
       <div class="main-content">
@@ -77,6 +78,7 @@ import NavBar from "@/components/NavBar.vue";
 import FooterModule from "@/components/FooterModule.vue";
 import ImgBanner from "@/components/ImgBanner.vue";
 import PreLoader from "@/components/PreLoader.vue";
+import LoginModule from "@/components/LoginModule.vue";
 import WildlifeEnvironment from '@/components/WildlifeEnvironment.vue';
 
 export default {
@@ -87,6 +89,7 @@ export default {
     ImgBanner,
     PreLoader,
     WildlifeEnvironment,
+    LoginModule,
   },
   data() {
     return {
@@ -190,6 +193,10 @@ export default {
       ],
       selectedAnimal: null,
     };
+  },
+  mounted() {
+    // Scroll to the top of the page on each route change
+    window.scrollTo(0, 0);
   },
   methods: {
     selectAnimal(animal) {

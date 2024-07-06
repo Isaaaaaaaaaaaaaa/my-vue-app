@@ -34,6 +34,7 @@ export default {
     PreLoader,
     AnimalModelIntro,
   },
+  
   data() {
     return {
       isLoading: false,
@@ -48,6 +49,10 @@ export default {
     EventBus.on("recognize-end", () => {
       this.isLoading = false;
     });
+  },
+  mounted() {
+    // Scroll to the top of the page on each route change
+    window.scrollTo(0, 0);
   },
   beforeUnmount() {
     EventBus.off("recognize-start");

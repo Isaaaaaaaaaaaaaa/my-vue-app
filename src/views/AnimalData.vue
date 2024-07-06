@@ -154,6 +154,7 @@ export default {
     this.createPieChart();
     this.createLineChart();
     this.createRadarChart();
+    window.scrollTo(0, 0);
   },
   updated() {
     // 在更新时重新绘制图表

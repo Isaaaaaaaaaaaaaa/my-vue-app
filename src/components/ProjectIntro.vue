@@ -6,7 +6,6 @@
         v-for="(item, index) in items"
         :key="index"
       >
-        <router-link :to="item.link" class="item-link">
           <div class="card border-0 rounded shadow-sm">
             <img
               :src="require('@/assets/' + item.image)"
@@ -18,7 +17,6 @@
               <p class="card-text text-muted">{{ item.content }}</p>
             </div>
           </div>
-        </router-link>
       </div>
     </div>
   </main>
@@ -110,11 +108,6 @@ export default {
 .card-text {
   font-size: 1rem;
   color: #666;
-}
-
-.item-link {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* 动画库 */

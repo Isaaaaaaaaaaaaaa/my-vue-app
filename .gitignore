@@ -9,6 +9,7 @@ node_modules
 /backend/venv
 /backend/__pycache__
 /backend/images
+/backend/runs
 /runs
 
 # Log files
