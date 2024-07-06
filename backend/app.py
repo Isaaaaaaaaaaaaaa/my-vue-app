@@ -160,7 +160,12 @@ def register():
     username = data['username']
     password = data['password']
     hashed_password = generate_password_hash(password)
-
+    if len(username) > 10:
+        return jsonify({"error": "Username cannot be longer than 10 characters"}), 400
+    if not username or not password:
+        return jsonify({"error": "Username or password is empty"}), 400
+        
+    hashed_password = generate_password_hash(password)
     conn = get_db_connection()
     if conn is None:
         return jsonify({"error": "Failed to connect to database"}), 500
