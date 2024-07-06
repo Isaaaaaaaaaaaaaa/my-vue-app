@@ -1,12 +1,17 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <MusicPlayerButton :audioSrc="require('@/assets/music/music.mp3')" />
   </div>
 </template>
 
 <script>
+import MusicPlayerButton from './components/MusicPlayerButton.vue';
 export default {
   name: 'App',
+  components: {
+    MusicPlayerButton,
+  },
 };
 </script>
 
