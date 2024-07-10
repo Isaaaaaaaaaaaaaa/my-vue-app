@@ -159,7 +159,7 @@ def register():
     data = request.json
     username = data['username']
     password = data['password']
-    hashed_password = generate_password_hash(password)
+
     if len(username) > 10:
         return jsonify({"error": "Username cannot be longer than 10 characters"}), 400
     if not username or not password:
