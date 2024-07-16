@@ -1,37 +1,49 @@
 <template>
   <header :class="{ scrolled: isScrolled }">
-    <nav>
-      <div class="navbar-header">
-        <router-link to="/" class="navbar-logo">鉴图识灵</router-link>
-      </div>
-      <div class="split-nav">
-        <ul class="nav-left">
-          <li><router-link to="/" class="nav-link">首页</router-link></li>
-          <li>
-            <router-link to="/animal-intro" class="nav-link"
-              >野生动物</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/animal-detect" class="nav-link"
-              >图像识别</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/animal-data" class="nav-link"
-              >数据分析</router-link
-            >
-          </li>
-        </ul>
-        <ul class="nav-right">
-          <li v-if="isLoggedIn" class="user">你好，{{ username }}</li>
-          <li v-if="!isLoggedIn">
-            <a href="javascript:void(0)" @click="triggerLogin">登录</a>
-          </li>
-          <li v-else>
-            <a href="javascript:void(0)" @click="handleLogout">退出</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <router-link to="/" class="navbar-brand d-flex align-items-center">
+          <img :src="require('@/assets/logo.png')" alt="Logo" class="me-2 logo-img" />
+          <span class="navbar-logo">鉴图识灵</span>
+        </router-link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <router-link to="/" class="nav-link">首页</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/animal-intro" class="nav-link">野生动物</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/animal-detect" class="nav-link">图像识别</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/animal-data" class="nav-link">数据分析</router-link>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item" v-if="isLoggedIn">
+              <span class="nav-link user">你好，{{ username }}</span>
+            </li>
+            <li class="nav-item" v-if="!isLoggedIn">
+              <a href="javascript:void(0)" class="nav-link" @click="triggerLogin">登录</a>
+            </li>
+            <li class="nav-item" v-else>
+              <a href="javascript:void(0)" class="nav-link" @click="handleLogout">退出</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -45,8 +57,8 @@ export default {
   data() {
     return {
       isLoggedIn: false,
-      isScrolled: false, // 添加一个状态来标记页面是否发生滚动
-      username: "", // 用户名
+      isScrolled: false,
+      username: "",
     };
   },
   methods: {
@@ -58,7 +70,7 @@ export default {
       try {
         await axios.post("/logout");
         this.isLoggedIn = false;
-        this.username = ""; // 退出登录后清空用户名
+        this.username = "";
         alert("退出成功！");
       } catch (error) {
         alert("退出失败！");
@@ -69,16 +81,18 @@ export default {
         const response = await axios.get("/status");
         this.isLoggedIn = response.data.logged_in;
         if (this.isLoggedIn) {
-          this.username = response.data.username; // 更新用户名
+          this.username = response.data.username;
+          console.log("登录状态：已登录", this.username); // 添加调试信息
+        } else {
+          console.log("登录状态：未登录"); // 添加调试信息
         }
       } catch (error) {
         this.isLoggedIn = false;
-        this.username = ""; // 出错时清空用户名
+        this.username = "";
         console.error("检查登录状态失败:", error);
       }
     },
     handleScroll() {
-      // 监听页面滚动事件，根据滚动距离设置 isScrolled 状态
       if (window.scrollY > 0) {
         this.isScrolled = true;
       } else {
@@ -87,11 +101,11 @@ export default {
     },
   },
   mounted() {
-    this.checkLoginStatus(); // 组件挂载时检查登录状态
-    window.addEventListener("scroll", this.handleScroll); // 监听滚动事件
+    this.checkLoginStatus();
+    window.addEventListener("scroll", this.handleScroll);
   },
   unmounted() {
-    window.removeEventListener("scroll", this.handleScroll); // 组件卸载时移除滚动事件监听
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
@@ -124,109 +138,74 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #f2f2f2; /* 浅灰色背景 */
-  color: #333; /* 深灰色文字 */
-  font-size: 16px;
-  padding: 20px;
+  transition: all 0.5s ease-in-out;
   z-index: 999;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-  height: 120px;
-  transition: all 0.3s ease-in-out;
 }
 
-nav {
-  position: relative;
-  top: 10px;
+.navbar {
+  transition: all 0.5s ease-in-out;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
 }
 
-.split-nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f2f2f2; 
-  color: #fff; /* 白色文字 */
-  padding: 10px;
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+  color: #495057;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.navbar-header {
-  float: left;
-}
-
-.nav-left,
-.nav-right {
-  display: flex;
-  align-items: center;
-}
-
-.nav-left li,
-.nav-right li {
-  margin-right: 30px;
-}
-
-.user {
-  color: aqua;
-}
-.nav-left li:last-child,
-.nav-right li:last-child {
-  margin-right: 0;
-}
-
-.nav-left a,
-.nav-right a {
-  display: block;
-  padding: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #637dba; /* 深蓝色文字 */
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-left a:hover,
-.nav-right a:hover {
-  color: #e7e7e7; /* 浅灰色文字 */
-  background-color: #676767; /* 深灰色背景 */
-  border-radius: 3px;
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-logo {
   font-family: "方正硬笔行楷";
-  font-size: 50px;
-  line-height: 60px;
-  color: #637dba; /* 深蓝色文字 */
-  text-decoration: none;
+  font-size: 30px;
+  color: #007bff;
+  transition: all 0.5s ease-in-out;
+}
+.logo-img {
+  width: 60px;
+  height: 60px;
   transition: all 0.3s ease-in-out;
 }
-
-.navbar-logo:hover {
-  color: #475881; /* 深蓝色文字 */
+.nav-item {
+  margin-right: 20px;
 }
 
-header.scrolled,
-header.scrolled .split-nav {
-  background-color: #333; /* 深灰色背景 */
-  color: #e7e7e7; /* 浅灰色文字 */
-  padding: 15px;
-  opacity: 0.8;
+.user {
+  color: #007bff;
+  font-weight: bold;
+}
+
+header.scrolled .navbar {
+  background-color: #343a40 !important;
+  padding: 0.8rem 1.5rem;
+}
+
+header.scrolled .navbar-light .navbar-brand, 
+header.scrolled .navbar-light .navbar-nav .nav-link {
+  color: #f8f9fa !important;
+}
+
+header.scrolled .navbar-light .navbar-nav .nav-link:hover {
+  color: #343a40 !important;
+  background-color: #f8f9fa !important;
 }
 
 header.scrolled .navbar-logo {
-  color: #e7e7e7; /* 浅灰色文字 */
+  color: #f8f9fa !important;
 }
 
-header.scrolled .nav-left a,
-header.scrolled .nav-right a {
-  color: #e7e7e7; /* 浅灰色文字 */
-}
-
-header.scrolled .nav-left a:hover,
-header.scrolled .nav-right a:hover {
-  color: #333; /* 深灰色文字 */
-  background-color: #e7e7e7; /* 浅灰色背景 */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .nav-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
 </style>
-

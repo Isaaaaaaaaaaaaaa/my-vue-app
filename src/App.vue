@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <MusicPlayerButton :audioSrc="require('@/assets/music/music.mp3')" />
+    <MusicPlayerButton :audioSrc="require('@/assets/music/BGM.mp3')" />
   </div>
 </template>
 
