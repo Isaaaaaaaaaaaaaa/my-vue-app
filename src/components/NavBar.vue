@@ -144,7 +144,7 @@ header {
 
 .navbar {
   transition: all 0.5s ease-in-out;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   background-color: #f8f9fa;
 }
 
@@ -155,7 +155,7 @@ header {
 
 .navbar-light .navbar-nav .nav-link:hover {
   color: #fff;
-  background-color: #007bff;
+  background-color: #6c757d; /* 修改为更柔和的颜色 */
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -163,20 +163,22 @@ header {
 .navbar-logo {
   font-family: "方正硬笔行楷";
   font-size: 30px;
-  color: #007bff;
+  color: #6c757d; /* 修改为与悬停时颜色相配 */
   transition: all 0.5s ease-in-out;
 }
+
 .logo-img {
   width: 60px;
   height: 60px;
   transition: all 0.3s ease-in-out;
 }
+
 .nav-item {
   margin-right: 20px;
 }
 
 .user {
-  color: #007bff;
+  color: #6c757d; /* 与其他颜色相配 */
   font-weight: bold;
 }
 
