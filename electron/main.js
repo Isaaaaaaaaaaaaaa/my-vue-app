@@ -22,21 +22,21 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  const backendPath = path.join(__dirname, '../backend');
-  console.log(`Backend path: ${backendPath}`);
+  // const backendPath = path.join(__dirname, '../backend');
+  // console.log(`Backend path: ${backendPath}`);
 
-  const flaskServer = spawn('python', ['app.py'], {
-    stdio: ['pipe', 'pipe', 'pipe'],
-    cwd: backendPath
-  });
+  // const flaskServer = spawn('python', ['app.py'], {
+  //   stdio: ['pipe', 'pipe', 'pipe'],
+  //   cwd: backendPath
+  // });
 
-  flaskServer.stderr.on('data', (data) => {
-    console.error(`Flask server error: ${data}`);
-  });
+  // flaskServer.stderr.on('data', (data) => {
+  //   console.error(`Flask server error: ${data}`);
+  // });
 
-  flaskServer.on('close', (code) => {
-    console.log(`Flask server exited with code ${code}`);
-  });
+  // flaskServer.on('close', (code) => {
+  //   console.log(`Flask server exited with code ${code}`);
+  // });
 
   createWindow();
 

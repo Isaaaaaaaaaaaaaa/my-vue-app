@@ -5,8 +5,8 @@
   <LoginModule />
   <div class="animal-detect">
     <ImgBanner :image-src="require('@/assets/images/banner.jpg')" />
-    <DetectModule class="detect" />
     <AnimalModelIntro />
+    <DetectModule class="detect" />
   </div>
   <FooterModule class="footer-style" />
 </template>

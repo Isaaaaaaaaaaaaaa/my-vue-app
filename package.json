@@ -19,13 +19,7 @@
       "dist/**/*",
       "electron/main.js"
     ],
-    "extends": null,
-    "extraResources": [
-      {
-        "from": "D:\\Python\\Python311\\",
-        "to": "python"
-      }
-    ]
+    "extends": null
   },
   "win": {
     "target": "nsis",

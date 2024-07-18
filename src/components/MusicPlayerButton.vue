@@ -4,7 +4,7 @@
         <span v-if="isPlaying">⏸️</span>
         <span v-else>▶️</span>
       </button>
-      <audio ref="audio" :src="audioSrc" />
+      <audio ref="audio" :src="audioSrc" loop/>
     </div>
   </template>
   
