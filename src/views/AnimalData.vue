@@ -1,3 +1,4 @@
+<!-- AnimalData.vue -->
 <template>
   <div>
     <PreLoader />

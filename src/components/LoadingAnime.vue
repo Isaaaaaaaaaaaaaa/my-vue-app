@@ -1,3 +1,4 @@
+<!-- src/components/LoadingAnime.vue -->
 <template>
   <transition name="fade">
     <div v-if="showLoader" class="background">

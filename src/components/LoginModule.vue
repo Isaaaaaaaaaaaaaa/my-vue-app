@@ -1,3 +1,4 @@
+<!-- src/components/LoginModule.vue -->
 <template>
   <div id="form-background" v-if="isVisible" class="show">
     <div class="form-container show">

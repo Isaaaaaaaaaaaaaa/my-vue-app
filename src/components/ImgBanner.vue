@@ -1,3 +1,4 @@
+<!-- src/components/ImaBanner.vue -->
 <template>
     <div id="banner">
       <img :src="imageSrc" alt="Banner Image" />

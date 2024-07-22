@@ -1,3 +1,4 @@
+<!-- AnimalDetect.vue -->
 <template>
   <PreLoader />
   <LoadingAnime v-if="isLoading" />

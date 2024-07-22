@@ -1,3 +1,4 @@
+<!-- src/components/WildlifeEnvironment.vue -->
 <template>
     <div class="wildlife-environment">
       <div class="container py-5">

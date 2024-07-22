@@ -1,3 +1,4 @@
+# backend/app.py
 from flask import Flask, jsonify, request, session
 from flask_cors import CORS
 import mysql.connector

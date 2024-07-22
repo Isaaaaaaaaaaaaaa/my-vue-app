@@ -1,3 +1,4 @@
+<!-- src/components/MusicPlayerButton.vue -->
 <template>
     <div class="music-player-button">
       <button @click="togglePlay">
