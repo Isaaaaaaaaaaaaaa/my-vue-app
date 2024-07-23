@@ -1,3 +1,4 @@
+<!-- src/components/PreLoader.vue -->
 <template>
     <div v-if="isLoading" class="loader-overlay">
       <div class="loader-wrapper">

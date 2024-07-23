@@ -1,3 +1,4 @@
+<!-- AnimalModelIntro.vue -->
 <template>
     <section class="animal-detect-info">
       <div class="container">

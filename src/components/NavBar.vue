@@ -1,3 +1,4 @@
+<!-- src/components/NavBar.vue -->
 <template>
   <header :class="{ scrolled: isScrolled }">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -1,3 +1,4 @@
+<!-- src/components/DetectModule.vue -->
 <template>
   <section class="section section-lg bg-light text-left section-relative py-5">
     <div class="container">

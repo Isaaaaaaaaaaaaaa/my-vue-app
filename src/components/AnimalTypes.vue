@@ -1,3 +1,4 @@
+<!-- AnimalTypes.vue -->
 <template>
   <div class="row">
     <div class="sidebar">
