@@ -50,7 +50,7 @@
 
     <!-- 版权信息 -->
     <div class="footer-bottom text-center py-3 animate__animated animate__fadeIn">
-      <p>&copy; 2024 鉴图识灵团队 | 保留所有权利</p>
+      <p>&copy; 2024 林影智鉴团队 | 保留所有权利</p>
     </div>
   </footer>
 </template>

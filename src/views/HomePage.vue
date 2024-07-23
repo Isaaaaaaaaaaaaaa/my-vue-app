@@ -58,14 +58,14 @@
         </div>
         <div class="col-md-3">
           <div class="stat-item p-4 rounded shadow-lg bg-gradient-success text-white animate__animated animate__zoomIn animate__delay-2s">
-            <h3>500+</h3>
+            <h3>10+</h3>
             <p>识别种类</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="stat-item p-4 rounded shadow-lg bg-gradient-warning text-white animate__animated animate__zoomIn animate__delay-3s">
             <h3>100+</h3>
-            <p>用户研究团队</p>
+            <p>野生动物覆盖面</p>
           </div>
         </div>
         <div class="col-md-3">
