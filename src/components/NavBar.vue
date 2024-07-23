@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <router-link to="/" class="navbar-brand d-flex align-items-center">
           <img :src="require('@/assets/logo.png')" alt="Logo" class="me-2 logo-img" />
-          <span class="navbar-logo">鉴图识灵</span>
+          <span class="navbar-logo">林影智鉴</span>
         </router-link>
         <button
           class="navbar-toggler"
