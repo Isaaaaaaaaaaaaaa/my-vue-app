@@ -5,7 +5,7 @@
   <NavBar />
   <LoginModule />
   <div class="animal-detect">
-    <ImgBanner :image-src="require('@/assets/images/banner.jpg')" />
+    <ImgBanner :image-src="require('@/assets/images/banner2.jpg')" />
     <AnimalModelIntro />
     <DetectModule class="detect" />
   </div>

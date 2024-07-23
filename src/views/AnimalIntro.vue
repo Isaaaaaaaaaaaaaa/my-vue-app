@@ -5,7 +5,7 @@
     <NavBar />
     <LoginModule />
     <div class="animal-intro">
-      <ImgBanner :image-src="require('@/assets/images/banner.jpg')" />
+      <ImgBanner :image-src="require('@/assets/images/banner1.jpg')" />
       <div class="main-content">
         <h2 class="display-4 mt-5 mb-4 animate__animated animate__fadeIn">栖息环境</h2>
         <WildlifeEnvironment />

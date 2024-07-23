@@ -4,7 +4,7 @@
     <PreLoader />
     <NavBar />
     <LoginModule />
-    <ImgBanner :image-src="require('@/assets/images/banner.jpg')" class="banner" />
+    <ImgBanner :image-src="require('@/assets/images/banner3.jpg')" class="banner" />
     <div class="container mt-5 animal-data">
       <div class="mt-4">
         <div class="row">
