@@ -72,7 +72,7 @@ export default {
             "狮子主要生活在非洲的稀树草原和草原地区，少数亚种生活在印度的森林中。",
           status:
             "狮子目前被国际自然保护联盟（IUCN）列为“易危”物种。保护措施包括反偷猎行动、保护自然栖息地、与当地社区合作以减少人兽冲突，以及在动物园和保护区中进行繁育项目。",
-          image: "slideImg3.jpg",
+          image: "lion.jpg",
         },
         {
           id: 2,
@@ -83,7 +83,7 @@ export default {
             "大象分为非洲象和亚洲象。非洲象主要生活在撒哈拉以南的非洲草原和森林中，而亚洲象则分布在南亚和东南亚的森林和草原中。",
           status:
             "大象面临偷猎和栖息地丧失的威胁。非洲象被列为“易危”，而亚洲象被列为“濒危”物种。保护措施包括反偷猎、栖息地保护和恢复、象牙贸易禁令以及社区教育和参与。",
-          image: "slideImg3.jpg",
+          image: "elephant.jpg",
         },
         {
           id: 3,
@@ -93,7 +93,7 @@ export default {
           habitat: "斑马主要生活在非洲的草原和稀树草原地区。",
           status:
             "斑马的保护状况因种类而异。草原斑马的保护状况相对较好，而山斑马则被列为“濒危”物种。保护措施包括栖息地保护和防止非法狩猎。",
-          image: "slideImg3.jpg",
+          image: "zebra.jpg",
         },
         {
           id: 4,
@@ -103,7 +103,7 @@ export default {
           habitat: "长颈鹿生活在非洲的稀树草原和森林边缘地带。",
           status:
             "长颈鹿被列为“易危”物种。保护措施包括栖息地保护、打击偷猎以及与当地社区合作以减少人类活动对其栖息地的影响。",
-          image: "slideImg3.jpg",
+          image: "giraffe.jpg",
         },
         {
           id: 5,
@@ -113,7 +113,7 @@ export default {
           habitat: "犀牛主要分布在非洲和亚洲的草原、稀树草原和森林地区。",
           status:
             "犀牛分为几种不同的种类，其中一些如爪哇犀和苏门答腊犀被列为“极危”物种。保护措施包括严格的反偷猎措施、栖息地保护和恢复、国际合作以及繁育项目。",
-          image: "slideImg3.jpg",
+          image: "rhino.jpg",
         },
         {
           id: 6,
@@ -123,7 +123,7 @@ export default {
           habitat: "袋鼠主要生活在澳大利亚的草原、灌木丛和森林地区。",
           status:
             "大多数袋鼠种类的数量相对稳定，但也有少数种类面临栖息地丧失和气候变化的威胁。保护措施包括栖息地保护、科学研究和制定管理计划。",
-          image: "slideImg3.jpg",
+          image: "kangaroo.jpg",
         },
         {
           id: 7,
@@ -133,7 +133,7 @@ export default {
           habitat: "老虎主要分布在亚洲的森林、草原和湿地。",
           status:
             "老虎被列为“濒危”物种。保护措施包括反偷猎、栖息地保护和恢复、减少人兽冲突、加强法律法规以及国际合作。",
-          image: "slideImg3.jpg",
+          image: "tiger.jpg",
         },
         {
           id: 8,
@@ -143,7 +143,7 @@ export default {
           habitat: "猴子生活在全球热带和亚热带地区的森林、草原和山区。",
           status:
             "不同种类的猴子保护状况各异，有些种类被列为“濒危”或“极危”物种。保护措施包括栖息地保护、打击非法捕捉和贸易以及社区教育。",
-          image: "slideImg3.jpg",
+          image: "monkey.jpg",
         },
         {
           id: 9,
@@ -153,7 +153,7 @@ export default {
           habitat: "考拉主要生活在澳大利亚的桉树森林中。",
           status:
             "考拉被列为“易危”物种。保护措施包括栖息地保护和恢复、科学研究、减少森林砍伐和城市扩张的影响，以及公众教育和参与。",
-          image: "slideImg3.jpg",
+          image: "koala.jpg",
         },
         {
           id: 10,
@@ -163,7 +163,7 @@ export default {
           habitat: "企鹅主要生活在南半球，特别是在南极洲和周边的海域。",
           status:
             "不同种类的企鹅保护状况不同，一些种类面临气候变化和海洋污染的威胁。保护措施包括海洋保护区的建立、减少渔业对企鹅的影响以及科学研究。",
-          image: "slideImg3.jpg",
+          image: "penguin.jpg",
         },
         {
           id: 11,
@@ -173,7 +173,7 @@ export default {
           habitat: "北极熊主要生活在北极地区的海冰上。",
           status:
             "北极熊被列为“易危”物种，主要受到气候变化导致的海冰减少的威胁。保护措施包括减缓气候变化的全球努力、保护其栖息地以及国际合作。",
-          image: "slideImg3.jpg",
+          image: "polar-bear.jpg",
         },
         {
           id: 12,
@@ -184,7 +184,7 @@ export default {
             "鳄鱼生活在全球热带和亚热带地区的淡水和咸水栖息地中，包括河流、湖泊和沼泽。",
           status:
             "不同种类的鳄鱼保护状况各异，有些种类被列为“濒危”或“极危”物种。保护措施包括栖息地保护、打击非法捕猎和贸易以及科学研究。",
-          image: "slideImg3.jpg",
+          image: "alligator.jpg",
         },
       ],
       selectedAnimal: null,

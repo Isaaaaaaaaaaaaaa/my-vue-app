@@ -8,10 +8,10 @@
           <div class="col-md-6">
             <h2 class="mb-4 animate__animated animate__fadeInRight">雾灵山自然保护区</h2>
             <p class="animate__animated animate__fadeInRight">
-              雾灵山自然保护区位于湖南、湖北和重庆三省市交界处，是我国重要的自然保护区之一。保护区生态系统完整，物种丰富，特别是对多种珍稀濒危动植物的保护工作做得较好。
+              雾灵山本名伏凌山，曾叫孟广硎山、五龙山，位于河北省承德市兴隆县境内，地处北京、天津、唐山、承德四城市之间，距首都北京120公里。经过亿万年的沧桑巨变、陆海沉浮，雾灵山成为燕山山脉的主峰，最高海拔2118米。
             </p>
             <p class="animate__animated animate__fadeInRight">
-              保护区内的野生动物包括狍子、岩羊、亚洲黑熊等，这些动物在这里找到了天然的栖息地和繁衍环境，展现了自然的原始风貌。
+              雾灵山自然保护区的保护对象为“温带森林生态系和猕猴分布北限”，森林覆盖率93%，动植物资源十分丰富，其中有高等植物1870种，陆生脊椎动物173种。
             </p>
             <a href="#" class="btn btn-primary animate__animated animate__fadeInUp">了解更多</a>
           </div>
